@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocity Motors | Schedule Test Drive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <a href="index.html" class="brand-logo">Velocity<span>Motors</span></a>
+        <ul class="navigation-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="book.html">Test Drive</a></li>
+        </ul>
+    </header>
+
+    <main class="content-wrapper fade-in-section">
+        <h2 class="section-title">Secure Your Drive</h2>
+        
+        <div class="booking-layout">
+            <div class="booking-visual-side">
+                <h3 class="booking-visual-title">Awaken The Engine.</h3>
+                <p style="color: #cccccc; font-size: 1.1rem;">Submit your details below. A dedicated client advisor will contact you within 15 minutes to confirm your exclusive track or street experience.</p>
+            </div>
+            
+            <div class="booking-form-side">
+                <form action="index.html">
+                    <div class="input-field-group">
+                        <label for="client-name">Full Legal Name</label>
+                        <input type="text" id="client-name" placeholder="E.g., Bruce Wayne" required>
+                    </div>
+                    
+                    <div class="input-field-group">
+                        <label for="client-contact">Email Address</label>
+                        <input type="email" id="client-contact" placeholder="bruce@example.com" required>
+                    </div>
+
+                    <div class="input-field-group">
+                        <label for="vehicle-interest">Vehicle of Interest</label>
+                        <select id="vehicle-interest" required>
+                            <option value="" style="color: #888;">Select from inventory...</option>
+                            <option value="phantom">Phantom Sedan</option>
+                            <option value="obsidian">Obsidian SUV</option>
+                            <option value="vortex">Vortex GT Stealth</option>
+                            <option value="electron">Electron EV Noir</option>
+                            <option value="titan">Titan Shadow Truck</option>
+                            <option value="breeze">Breeze Midnight</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field-group">
+                        <label for="visit-date">Requested Date</label>
+                        <input type="date" id="visit-date" required>
+                    </div>
+
+                    <button type="submit" class="primary-button full-width-button">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
