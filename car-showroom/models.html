@@ -1,155 +1,235 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Velocity Motors | Our Vehicle Inventory</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header class="main-header">
-        <a href="index.html" class="brand-logo">Velocity<span>Motors</span></a>
-        <ul class="navigation-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="models.html">Inventory</a></li>
-            <li><a href="book.html">Test Drive</a></li>
-        </ul>
+      <a href="index.html" class="brand-logo">Velocity<span>Motors</span></a>
+      <ul class="navigation-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="models.html">Inventory</a></li>
+        <li><a href="book.html">Test Drive</a></li>
+      </ul>
     </header>
 
     <main class="content-wrapper fade-in-section">
-        <h2 class="section-title">Current Inventory</h2>
-        
-        <div class="search-section">
-            <input type="text" id="vehicle-search" class="inventory-search-bar" placeholder="Search by model name..." onkeyup="filterVehicles()">
+      <h2 class="section-title">Current Inventory</h2>
+
+      <div class="search-section">
+        <input
+          type="text"
+          id="vehicle-search"
+          class="inventory-search-bar"
+          placeholder="Search by model name..."
+          onkeyup="filterVehicles()"
+        />
+      </div>
+
+      <div class="car-inventory-grid" id="inventory-grid">
+        <div class="car-product-card">
+          <div class="car-photo-container">
+            <img
+              src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80"
+              alt="Dark Sedan"
+              class="car-photo"
+            />
+          </div>
+          <div class="car-information">
+            <h3 class="car-name">Phantom Sedan</h3>
+            <p class="car-specifications">
+              V8 Twin-Turbo • Midnight Leather • AWD
+            </p>
+            <p class="car-price">$85,000</p>
+            <a href="book.html" class="primary-button full-width-button"
+              >Reserve Now</a
+            >
+          </div>
         </div>
-        
-        <div class="car-inventory-grid" id="inventory-grid">
-            
-            <div class="car-product-card">
-                <div class="car-photo-container">
-                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Dark Sedan" class="car-photo">
-                </div>
-                <div class="car-information">
-                    <h3 class="car-name">Phantom Sedan</h3>
-                    <p class="car-specifications">V8 Twin-Turbo • Midnight Leather • AWD</p>
-                    <p class="car-price">$85,000</p>
-                    <a href="book.html" class="primary-button full-width-button">Reserve Now</a>
-                </div>
-            </div>
 
-            <div class="car-product-card">
-                <div class="car-photo-container">
-                    <img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=800&q=80" alt="Dark SUV" class="car-photo">
-                </div>
-                <div class="car-information">
-                    <h3 class="car-name">Obsidian SUV</h3>
-                    <p class="car-specifications">V8 Engine • Armored Glass • Matte Finish</p>
-                    <p class="car-price">$115,500</p>
-                    <a href="book.html" class="primary-button full-width-button">Reserve Now</a>
-                </div>
-            </div>
-
-            <div class="car-product-card">
-                <div class="car-photo-container">
-                    <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80" alt="Sports Car" class="car-photo">
-                </div>
-                <div class="car-information">
-                    <h3 class="car-name">Vortex GT Stealth</h3>
-                    <p class="car-specifications">V10 Engine • Carbon Fiber • Track Ready</p>
-                    <p class="car-price">$182,000</p>
-                    <a href="book.html" class="primary-button full-width-button">Reserve Now</a>
-                </div>
-            </div>
-
-            <div class="car-product-card">
-                <div class="car-photo-container">
-                    <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80" alt="Electric Car" class="car-photo">
-                </div>
-                <div class="car-information">
-                    <h3 class="car-name">Electron EV Noir</h3>
-                    <p class="car-specifications">Tri-Motor • 500mi Range • Auto-Pilot</p>
-                    <p class="car-price">$99,900</p>
-                    <a href="book.html" class="primary-button full-width-button">Reserve Now</a>
-                </div>
-            </div>
-
-            <div class="car-product-card">
-                <div class="car-photo-container">
-                    <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=800&q=80" alt="Off-road Truck" class="car-photo">
-                </div>
-                <div class="car-information">
-                    <h3 class="car-name">Titan Shadow Truck</h3>
-                    <p class="car-specifications">4x4 Drivetrain • Lift Kit • Kevlar Tires</p>
-                    <p class="car-price">$78,000</p>
-                    <a href="book.html" class="primary-button full-width-button">Reserve Now</a>
-                </div>
-            </div>
-
-            <div class="car-product-card">
-                <div class="car-photo-container">
-                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" alt="Convertible" class="car-photo">
-                </div>
-                <div class="car-information">
-                    <h3 class="car-name">Breeze Midnight</h3>
-                    <p class="car-specifications">Inline 6 • Hardtop • Alcantara Interior</p>
-                    <p class="car-price">$65,200</p>
-                    <a href="book.html" class="primary-button full-width-button">Reserve Now</a>
-                </div>
-            </div>
-
-            <div class="car-product-card">
-                <div class="car-photo-container">
-                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80" alt="Hypercar" class="car-photo">
-                </div>
-                <div class="car-information">
-                    <h3 class="car-name">Apex Hypercar</h3>
-                    <p class="car-specifications">V12 Hybrid • Active Aero • Top Speed 220mph</p>
-                    <p class="car-price">$450,000</p>
-                    <a href="book.html" class="primary-button full-width-button">Reserve Now</a>
-                </div>
-            </div>
-
-            <div class="car-product-card">
-                <div class="car-photo-container">
-                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="Crossover" class="car-photo">
-                </div>
-                <div class="car-information">
-                    <h3 class="car-name">Horizon Crossover</h3>
-                    <p class="car-specifications">Turbo 4-Cyl • Hybrid Assist • City Commuter</p>
-                    <p class="car-price">$42,500</p>
-                    <a href="book.html" class="primary-button full-width-button">Reserve Now</a>
-                </div>
-            </div>
-
-            <div class="car-product-card">
-                <div class="car-photo-container">
-                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80" alt="Luxury Coupe" class="car-photo">
-                </div>
-                <div class="car-information">
-                    <h3 class="car-name">Zenith Executive</h3>
-                    <p class="car-specifications">V8 Supercharged • Massaging Seats • RWD</p>
-                    <p class="car-price">$128,000</p>
-                    <a href="book.html" class="primary-button full-width-button">Reserve Now</a>
-                </div>
-            </div>
-
+        <div class="car-product-card">
+          <div class="car-photo-container">
+            <img
+              src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=800&q=80"
+              alt="Dark SUV"
+              class="car-photo"
+            />
+          </div>
+          <div class="car-information">
+            <h3 class="car-name">Obsidian SUV</h3>
+            <p class="car-specifications">
+              V8 Engine • Armored Glass • Matte Finish
+            </p>
+            <p class="car-price">$115,500</p>
+            <a href="book.html" class="primary-button full-width-button"
+              >Reserve Now</a
+            >
+          </div>
         </div>
+
+        <div class="car-product-card">
+          <div class="car-photo-container">
+            <img
+              src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80"
+              alt="Sports Car"
+              class="car-photo"
+            />
+          </div>
+          <div class="car-information">
+            <h3 class="car-name">Vortex GT Stealth</h3>
+            <p class="car-specifications">
+              V10 Engine • Carbon Fiber • Track Ready
+            </p>
+            <p class="car-price">$182,000</p>
+            <a href="book.html" class="primary-button full-width-button"
+              >Reserve Now</a
+            >
+          </div>
+        </div>
+
+        <div class="car-product-card">
+          <div class="car-photo-container">
+            <img
+              src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80"
+              alt="Electric Car"
+              class="car-photo"
+            />
+          </div>
+          <div class="car-information">
+            <h3 class="car-name">Electron EV Noir</h3>
+            <p class="car-specifications">
+              Tri-Motor • 500mi Range • Auto-Pilot
+            </p>
+            <p class="car-price">$99,900</p>
+            <a href="book.html" class="primary-button full-width-button"
+              >Reserve Now</a
+            >
+          </div>
+        </div>
+
+        <div class="car-product-card">
+          <div class="car-photo-container">
+            <img
+              src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=800&q=80"
+              alt="Off-road Truck"
+              class="car-photo"
+            />
+          </div>
+          <div class="car-information">
+            <h3 class="car-name">Titan Shadow Truck</h3>
+            <p class="car-specifications">
+              4x4 Drivetrain • Lift Kit • Kevlar Tires
+            </p>
+            <p class="car-price">$78,000</p>
+            <a href="book.html" class="primary-button full-width-button"
+              >Reserve Now</a
+            >
+          </div>
+        </div>
+
+        <div class="car-product-card">
+          <div class="car-photo-container">
+            <img
+              src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80"
+              alt="Convertible"
+              class="car-photo"
+            />
+          </div>
+          <div class="car-information">
+            <h3 class="car-name">Breeze Midnight</h3>
+            <p class="car-specifications">
+              Inline 6 • Hardtop • Alcantara Interior
+            </p>
+            <p class="car-price">$65,200</p>
+            <a href="book.html" class="primary-button full-width-button"
+              >Reserve Now</a
+            >
+          </div>
+        </div>
+
+        <div class="car-product-card">
+          <div class="car-photo-container">
+            <img
+              src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80"
+              alt="Hypercar"
+              class="car-photo"
+            />
+          </div>
+          <div class="car-information">
+            <h3 class="car-name">Apex Hypercar</h3>
+            <p class="car-specifications">
+              V12 Hybrid • Active Aero • Top Speed 220mph
+            </p>
+            <p class="car-price">$450,000</p>
+            <a href="book.html" class="primary-button full-width-button"
+              >Reserve Now</a
+            >
+          </div>
+        </div>
+
+        <div class="car-product-card">
+          <div class="car-photo-container">
+            <img
+              src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80"
+              alt="Crossover"
+              class="car-photo"
+            />
+          </div>
+          <div class="car-information">
+            <h3 class="car-name">Horizon Crossover</h3>
+            <p class="car-specifications">
+              Turbo 4-Cyl • Hybrid Assist • City Commuter
+            </p>
+            <p class="car-price">$42,500</p>
+            <a href="book.html" class="primary-button full-width-button"
+              >Reserve Now</a
+            >
+          </div>
+        </div>
+
+        <div class="car-product-card">
+          <div class="car-photo-container">
+            <img
+              src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80"
+              alt="Luxury Coupe"
+              class="car-photo"
+            />
+          </div>
+          <div class="car-information">
+            <h3 class="car-name">Zenith Executive</h3>
+            <p class="car-specifications">
+              V8 Supercharged • Massaging Seats • RWD
+            </p>
+            <p class="car-price">$128,000</p>
+            <a href="book.html" class="primary-button full-width-button"
+              >Reserve Now</a
+            >
+          </div>
+        </div>
+      </div>
     </main>
 
     <script>
-        function filterVehicles() {
-            let searchInput = document.getElementById('vehicle-search').value.toLowerCase();
-            let vehicleCards = document.getElementsByClassName('car-product-card');
+      function filterVehicles() {
+        let searchInput = document
+          .getElementById("vehicle-search")
+          .value.toLowerCase();
+        let vehicleCards = document.getElementsByClassName("car-product-card");
 
-            for (let i = 0; i < vehicleCards.length; i++) {
-                let vehicleName = vehicleCards[i].querySelector('.car-name').innerText.toLowerCase();
-                if (vehicleName.includes(searchInput)) {
-                    vehicleCards[i].style.display = "";
-                } else {
-                    vehicleCards[i].style.display = "none";
-                }
-            }
+        for (let i = 0; i < vehicleCards.length; i++) {
+          let vehicleName = vehicleCards[i]
+            .querySelector(".car-name")
+            .innerText.toLowerCase();
+          if (vehicleName.includes(searchInput)) {
+            vehicleCards[i].style.display = "";
+          } else {
+            vehicleCards[i].style.display = "none";
+          }
         }
+      }
     </script>
-</body>
+  </body>
 </html>
