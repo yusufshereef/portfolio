@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter App</title>
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #1f4037, #99f2c8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        background: white;
+        padding: 30px;
+        width: 320px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      #count {
+        font-size: 3rem;
+        margin: 20px 0;
+        font-weight: bold;
+        color: black;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .inc {
+        background: #28a745;
+        color: white;
+      }
+
+      .dec {
+        background: #dc3545;
+        color: white;
+      }
+
+      .reset {
+        background: #007bff;
+        color: white;
+      }
+
+      button:hover {
+        opacity: 0.85;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h1>Counter App</h1>
+
+      <div id="count">0</div>
+
+      <div class="buttons">
+        <button class="dec">Decrease</button>
+        <button class="reset">Reset</button>
+        <button class="inc">Increase</button>
+      </div>
+    </div>
+
+    <script>
+      let count = 0;
+
+      const countDisplay = document.getElementById("count");
+      const incBtn = document.querySelector(".inc");
+      const decBtn = document.querySelector(".dec");
+      const resetBtn = document.querySelector(".reset");
+
+      incBtn.addEventListener("click", function () {
+        count++;
+        updateUI();
+      });
+
+      decBtn.addEventListener("click", function () {
+        count--;
+        updateUI();
+      });
+
+      resetBtn.addEventListener("click", function () {
+        count = 0;
+        updateUI();
+      });
+
+      function updateUI() {
+        countDisplay.textContent = count;
+
+        if (count > 0) {
+          countDisplay.style.color = "green";
+        } else if (count < 0) {
+          countDisplay.style.color = "red";
+        } else {
+          countDisplay.style.color = "black";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0px;
+        background: linear-gradient(
+          to top,
+          rgb(164, 255, 250),
+          rgb(255, 255, 255)
+        );
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 35px;
+        height: 100vh;
+        font-weight: bold;
+      }
+      button {
+        border-radius: 5px;
+        height: 30px;
+        width: 90px;
+        background-color: rgba(255, 255, 255, 0.694);
+        transition: all 0.3s ease;
+        border: none;
+      }
+      button:hover {
+        transform: translate3d(5px, 5px);
+        background-color: rgba(0, 0, 0, 0.518);
+        color: rgb(255, 255, 255);
+      }
+      input {
+        background-color: rgba(255, 255, 255, 0.621);
+        border-radius: 5px;
+        border: none;
+        height: 40px;
+        width: 200px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Age Predictor</h1>
+    <br />
+    <label>Guess Age</label>
+    <br />
+    <br />
+    <input id="age" type="number" placeholder="Enter Age" />
+    <button id="check">Check</button>
+    <p id="result"></p>
+    <script>
+      const age = document.getElementById("age");
+      const checkBtn = document.getElementById("check");
+      let random = Math.ceil(Math.random() * 50);
+      checkBtn.onclick = function () {
+        let ageInput = Number(age.value);
+        if (ageInput > random) {
+          document.getElementById("result").textContent =
+            "age is too high try again";
+        } else if (ageInput < random) {
+          document.getElementById("result").textContent = "age is too low";
+        } else {
+          document.getElementById("result").textContent =
+            "you guessed correctly";
+        }
+      };
+    </script>
+  </body>
+</html>
